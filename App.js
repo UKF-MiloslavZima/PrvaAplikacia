@@ -2,9 +2,11 @@ import React from "react";
 import { SafeAreaView, TouchableOpacity, View, Text, FlatList } from "react-native";
 import Title from "./components/Title/Title";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import globalStyle from "./assets/styles/globalStyle";
 import UserStory from "./components/UserStory/UserStory";
+import UserPost from "./components/UserPost/UserPost";
+import defaultProfileImage from "./assets/images/default_profile.png";
 
 const App = () => {
   const userStories = [
@@ -55,6 +57,36 @@ const App = () => {
     },
   ];
 
+const userPosts = [
+    {
+        userName: "Joseph",
+        location: "New York, USA",
+        profileImage: defaultProfileImage,
+        postImage: require("./assets/images/default_post.png"),
+        likes: 120,
+        comments: 45,
+        saves: 10
+    },
+    {
+        userName: "Angel",
+        location: "Los Angeles, USA",
+        profileImage: defaultProfileImage,
+        postImage: require("./assets/images/default_post.png"),
+        likes: 85,
+        comments: 30,
+        saves: 15
+    },
+    {
+        userName: "White",
+        location: "London, UK",
+        profileImage: defaultProfileImage,
+        postImage: require("./assets/images/default_post.png"),
+        likes: 140,
+        comments: 50,
+        saves: 25
+    }
+];
+
   return (
     <SafeAreaView>
       <View
@@ -82,7 +114,23 @@ const App = () => {
           }
         />
       </View>
+      <View>
+         {userPosts.map(post => (
+        <UserPost
+            key={post.userName}
+            userName={post.userName}
+            location={post.location}
+            profileImage={post.profileImage}
+            postImage={post.postImage}
+            likes={post.likes}
+            comments={post.comments}
+            saves={post.saves}
+        />
+    ))}
+       </View>
     </SafeAreaView>
+
+
   );
 }
 
