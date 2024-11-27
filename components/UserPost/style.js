@@ -1,51 +1,43 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native';
 import { getFontFamily } from '../../assets/fonts/helper';
 
 const style = StyleSheet.create({
-    postContainer: {
+    userContainer: { flexDirection: 'row' },
+    userTextContainer: {
         justifyContent: 'center',
-        marginLeft: 30,
-        marginTop: 20,
-        borderBottomWidth: 1,
-        borderBottomColor: '#EFF2F6',
+        marginLeft: 10,
     },
-    header: {
+    user: {
         flexDirection: 'row',
         alignItems: 'center',
-        
-    },
-    userInfo: {
-        marginLeft: 10,
         justifyContent: 'space-between',
     },
-    userName: {
-        fontWeight: 'bold',
-        color: 'black',
+    username: {
+        color: '#000',
         fontFamily: getFontFamily('Inter_18pt', '600'),
+        fontSize: 16,
     },
     location: {
-        color: 'grey',
+        color: '#79869F',
+        marginLeft: -4,
         fontFamily: getFontFamily('Inter_18pt', '400'),
-    },
-    info: {
-        flexDirection: 'row',
-        paddingLeft: '30%',
+        fontSize: 12,
+        marginTop: 5,
     },
     postImage: {
         alignItems: 'center',
         marginVertical: 20,
     },
-    footer: {
-        flexDirection: 'row',
-        justifyContent: 'start',
-        padding: 10,
+    userPostContainer: {
+        marginTop: 35,
+        paddingBottom: 20,
+        borderBottomWidth: 1,
+        borderBottomColor: '#EFF2F6',
     },
-    interaction: {
-        fontSize: 16,
-        marginLeft: 10,
-        marginRight: 35,
-
-    }
+    userPostStats: { marginLeft: 10, flexDirection: 'row' },
+    userPostStatButton: { flexDirection: 'row' },
+    userPostStatButtonRight: { flexDirection: 'row', marginLeft: 27 },
+    userPostStatText: { marginLeft: 3, color: '#79869F' },
 });
 
 export default style;
